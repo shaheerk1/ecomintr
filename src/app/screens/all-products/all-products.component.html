@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="card" *ngFor='let p of sampleProducts'>
+        <img src="{{p.image}}" alt="{{p.name}}" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">{{p.name}}</h5>
+            <p class="card-text">{{p.description}}</p>
+            <p class="card-price">{{p.price}}</p>
+            <button (click)="addToCart(p)" class="btn btn-primary">Add to cart</button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div>
+        <button (click)="navigateToCheckout()" class="btn btn-primary btn-full-width">Cart</button>
+    
+    <h6>{{ cartItems.length }} In Cart</h6>
+    </div>
+
+</div>

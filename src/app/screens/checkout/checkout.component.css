@@ -1,0 +1,256 @@
+
+
+.fullCheckoutPage{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+
+.checkoutMain{
+    width: 70%;
+    padding: 20px;
+}
+
+
+.payment-container {
+    width: 30%;
+    max-width: 400px;
+    background-color: #dfdfdf;
+    padding: 40px;
+    min-height: 100vh;
+}
+
+.headerCeckout{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.headerCeckout p{
+    color: rgb(135, 135, 135);
+}
+
+.couponSection{
+    display: flex;
+}
+
+
+.checkoutPayment{
+    width: 30%;
+    background-color: rgb(211, 211, 211);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.eachItem{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.rowsOfTbl{
+    display: flex;
+    flex-direction: column;
+}
+
+.paymentToggleSection{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: white;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.checkBox{
+    border: none;
+}
+
+
+.cart-container {
+    width: 70%;
+    max-width: 1000px;
+    background-color: #fff;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table th, .cart-table td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+}
+
+.product-info img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-controls button {
+    background-color: #ddd;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.quantity-controls span {
+    min-width: 20px;
+    text-align: center;
+}
+
+.remove-btn {
+    background-color: transparent;
+    border: none;
+    color: #d9534f;
+    cursor: pointer;
+}
+
+.cart-summary {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.coupon input {
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+.totals {
+    text-align: right;
+}
+
+.totals p {
+    margin: 0;
+}
+
+.totals h2 {
+    margin: 10px 0 0;
+}
+
+.cart-actions {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.cart-actions .continue-shopping {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+
+
+
+
+
+.payment-container h1 {
+    margin-top: 0;
+}
+
+.payment-container p {
+    color: #666;
+    font-size: 14px;
+}
+
+.checkout-step {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.checkout-step input[type="radio"] {
+    margin-right: 10px;
+}
+
+.payment-options {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.payment-options input[type="radio"] {
+    display: none;
+}
+
+.payment-options label {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.payment-options img {
+    width: 50px;
+    height: auto;
+}
+
+.payment-details .input-group {
+    margin-bottom: 15px;
+}
+
+.payment-details label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.payment-details input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #dfdfdf;
+    border-bottom: 1px solid black;
+}
+.payment-details input[type="text"]:active {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #dfdfdf;
+    border-bottom: 1px solid black;
+}
+
+.expiration-date {
+    display: flex;
+    justify-content: space-between;
+}
+
+.expiration-date input[type="text"] {
+    width: 48%;
+}
+
+.pay-button {
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
