@@ -1,0 +1,46 @@
+.checkoutMain{
+
+}
+
+.headerCeckout{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    fon
+}
+
+.headerCeckout p{
+    color: rgb(135, 135, 135);
+}
+
+.couponSection{
+    display: flex;
+}
+
+
+.fullCheckoutPage{
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkoutMain{
+    width: 70%;
+    background-color: aliceblue;
+}
+
+.checkoutPayment{
+    width: 30%;
+    background-color: antiquewhite;
+}
+
+.eachItem{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.rowsOfTbl{
+    display: flex;
+    flex-direction: column;
+}
