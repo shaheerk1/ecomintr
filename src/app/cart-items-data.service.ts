@@ -7,6 +7,8 @@ export class CartItemsDataService {
 
   private cartItems: any[] = [];
 
+  // total: number = 0;
+
   constructor() { }
 
   getItems(): any[] {
@@ -40,6 +42,15 @@ export class CartItemsDataService {
       })
     
     }
+  }
+
+  reduceQty(index: number): void {
+    if(this.cartItems[index].quantity > 1){
+      this.cartItems[index].quantity--
+    }else{
+      this.removeItem(index)
+    }
+  
   }
 
   removeItem(index: number): void {

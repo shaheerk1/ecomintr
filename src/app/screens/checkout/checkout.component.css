@@ -16,7 +16,7 @@
 .payment-container {
     width: 30%;
     max-width: 400px;
-    background-color: #dfdfdf;
+    background-color: #f7f7f7;
     padding: 40px;
     min-height: 100vh;
 }
@@ -124,7 +124,7 @@
 .remove-btn {
     background-color: transparent;
     border: none;
-    color: #d9534f;
+    color: #2d2d2d;
     cursor: pointer;
 }
 
@@ -134,9 +134,21 @@
     justify-content: space-between;
 }
 
-.coupon input {
-    border: 1px solid #ddd;
-    padding: 5px;
+.coupon {
+   
+    display: flex;
+    gap: 5px;
+}
+
+.cpn-code{
+    padding: 5px 13px;
+    background-color: #b6d9ff;
+    color: #007bff;
+    border-radius: 20px;
+}
+.cpn-notcode{
+    padding: 5px 0;
+    
 }
 
 .totals {
@@ -156,13 +168,14 @@
     margin-top: 20px;
 }
 
-.cart-actions .continue-shopping {
-    background-color: #007bff;
-    color: #fff;
+ .continue-shopping {
+    background-color: #ffffff;
+    color: #007bff;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 0px;
     cursor: pointer;
     border-radius: 4px;
+    font-weight: 700;
 }
 
 
@@ -191,12 +204,24 @@
 
 .payment-options {
     display: flex;
-    align-items: center;
-    margin: 20px 0;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 0px 0 10px 0;
+    gap: 0;
+    background-color: #fff;
+    padding: 10PX;
 }
 
 .payment-options input[type="radio"] {
-    display: none;
+    /* display: none; */
+}
+
+.pay-opt-each{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
 }
 
 .payment-options label {
@@ -209,6 +234,11 @@
     height: auto;
 }
 
+.payment-details{
+    padding: 15px;
+    width: 86%;
+}
+
 .payment-details .input-group {
     margin-bottom: 15px;
 }
@@ -216,7 +246,9 @@
 .payment-details label {
     display: block;
     margin-bottom: 5px;
-    font-weight: bold;
+    /* font-weight: bold; */
+    color: #666;
+    font-size: small;
 }
 
 .payment-details input[type="text"] {
@@ -254,3 +286,143 @@
     font-size: 16px;
 }
 
+
+
+
+
+.custom-radio {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 5px;
+    cursor: pointer;
+    position: relative;
+    padding: 10px 10px 10px 27px;
+    user-select: none;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+
+.custom-radio2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 0px;
+    cursor: pointer;
+    position: relative;
+    padding: 10px 10px 10px 27px;
+    user-select: none;
+    background-color: #fff;
+  }
+
+  .paytypeelems{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  
+
+  .paytypeelems p{
+color: #414141;
+font-weight: 600;
+    margin: 0;
+    padding: 0;
+  }
+
+  .rotatedown{
+    transform: rotate(90deg);
+
+  }
+  .rotateup{
+    transform: rotate(-90deg);
+
+  }
+  
+  .custom-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .custom-radio2 input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .custom-radio .checkmark {
+    position: absolute;
+    top: 9px;
+    left: 5px;
+    height: 17px;
+    width: 17px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+  }
+  
+  .custom-radio input:checked ~ .checkmark {
+    background-color: #2196F3;
+    border: 0px solid #2196F3;
+  }
+  
+  .custom-radio .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .custom-radio input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .custom-radio .checkmark:after {
+    left: 6px;
+    top: 3px;
+    width: 3px;
+    height: 6px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  } 
+  .custom-radio2 .checkmark {
+    position: absolute;
+    top: 9px;
+    left: 5px;
+    height: 17px;
+    width: 17px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+  }
+  
+  .custom-radio2 input:checked ~ .checkmark {
+    background-color: #2196F3;
+    border: 0px solid #2196F3;
+  }
+  
+  .custom-radio2 .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .custom-radio2 input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .custom-radio2 .checkmark:after {
+    left: 6px;
+    top: 3px;
+    width: 3px;
+    height: 6px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  } 
+
+  .lastopt{
+    margin-bottom: 0;  }

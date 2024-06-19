@@ -21,7 +21,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let ci of cartItems">
+          <tr *ngFor="let ci of cartItems;  let index = index ">
             <!-- <hr> -->
 
             <td>
@@ -36,31 +36,37 @@
 
             <td>
               <div class="quantity-controls">
-                <button>-</button>
+                <button (click)="reduceQty(index)">-</button>
                 <span>{{ ci.quantity }}</span>
                 <button (click)="addToCart(ci)">+</button>
               </div>
             </td>
             <td>${{ ci.price }}</td>
-            <td><button class="remove-btn">x</button></td>
+            <td><button (click)="removeFromCart(index)" class="remove-btn">x</button></td>
           </tr>
         </tbody>
       </table>
 
       <div class="cart-summary">
         <div class="coupon">
-          <label for="coupon-code">Coupon code:</label>
-          <input type="text" id="coupon-code" value="freeshipping" />
+          <p class="cpn-notcode">Coupon code:</p>
+          <p class="cpn-code" >freeshipping</p>
         </div>
         <div class="totals">
-          <p>Subtotal: $84.96</p>
+          <p>Subtotal: ${{total}}.00</p>
           <p>Shipping: $0.00</p>
-          <h2>Total: $84.96</h2>
         </div>
       </div>
-      <div class="cart-actions">
-        <button class="continue-shopping">Continue Shopping</button>
+      <div class="cart-summary">
+        <div class="coupon">
+          <button class="continue-shopping">&lt; Continue Shopping</button>
+
+        </div>
+        <div class="totals">
+          <h2>Total: ${{total}}.00</h2>
+        </div>
       </div>
+    
     </div>
   </div>
   <div class="payment-container">
@@ -68,54 +74,79 @@
     <p>Follow the steps below to complete the checkout process.</p>
 
     <form>
-      <div class="checkout-step">
-        <input type="radio" id="guest-checkout" name="checkout-step" checked />
-        <label for="guest-checkout">Guest Checkout</label>
-      </div>
-      <div class="checkout-step">
-        <input type="radio" id="shipping-info" name="checkout-step" />
-        <label for="shipping-info">Shipping Information</label>
-      </div>
-      <div class="checkout-step">
-        <input type="radio" id="payment-method" name="checkout-step" />
-        <label for="payment-method">Payment method</label>
-      </div>
+      <label class="custom-radio">
+        <input type="radio" name="option1" checked>
+        <span class="checkmark"></span>
+        <div class="paytypeelems">
+          <p>Guest Checkout</p>
+        <p class="rotatedown">></p>
+        </div>
+
+      </label>
+      <label class="custom-radio">
+        <input type="radio" name="option2" checked>
+        <span class="checkmark"></span>
+        
+        <div class="paytypeelems">
+          <p>Shipping Information</p>
+        <p class="rotatedown">></p>
+        </div>
+      </label>
+      <label id="lastopt" class="custom-radio2">
+        <input type="radio" name="option3">
+        <span class="checkmark"></span>
+        
+        <div class="paytypeelems">
+          <p>Payment method</p>
+        <p class="rotateup">></p>
+        </div>
+      </label>
 
       <div class="payment-options">
-        <input type="radio" id="paypal" name="payment" checked />
-        <label for="paypal"><img src="../../../assets/paypal.png" alt="PayPal" /></label>
-
-        <input type="radio" id="credit-card" name="payment" />
-        <label for="credit-card"
-          >
-          <img src="../../../assets/visa.png" alt="Credit Card"/>
-          <img src="../../../assets/shopping.png" alt="Credit Card"/>
-        </label>
-      </div>
-
-      <div class="payment-details">
-        <div class="input-group">
-          <label for="name-on-card">Name on Card</label>
-          <input class="text-inp" type="text" id="name-on-card" value="Adrian Kul" />
+        <div class="pay-opt-each">
+          <input type="radio" id="paypal" name="pay" checked />
+          <label for="paypal"><img src="../../../assets/paypal.png" alt="PayPal" /></label>
         </div>
-        <div class="input-group">
-          <label for="card-number">Card Number</label>
-          <input class="text-inp" type="text" id="card-number" value="2141 1253 9531 2131" />
+        <div class="pay-opt-each">
+
+          <input type="radio" id="credit-card" name="pay" />
+          <label [style]="{'display':'flex', gap:'15px'}" for="credit-card"
+            >
+            <img src="../../../assets/visa.png" alt="Credit Card"/>
+            <img src="../../../assets/shopping.png" alt="Credit Card"/>
+          </label>
+
         </div>
-        <div class="input-group">
-          <label for="expiration-date">Expiration date</label>
-          <div class="expiration-date">
-            <input class="text-inp" type="text" id="expiration-month" value="07" />
-            <input class="text-inp" type="text" id="expiration-year" value="24" />
+
+        <div class="payment-details">
+          <div class="input-group">
+            <label for="name-on-card">Name on Card</label>
+            <input class="text-inp" type="text" id="name-on-card" value="Adrian Kul" />
+          </div>
+          <div class="input-group">
+            <label for="card-number">Card Number</label>
+            <input class="text-inp" type="text" id="card-number" value="2141 1253 9531 2131" />
+          </div>
+          <div [style]="{display:'flex', gap: '20px'}">
+            <div class="input-group">
+              <label for="expiration-date">Expiration date</label>
+              <div class="expiration-date">
+                <input class="text-inp" type="text" id="expiration-month" value="07" />
+                <input class="text-inp" type="text" id="expiration-year" value="12" />
+                <input class="text-inp" type="text" id="expiration-year" value="24" />
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="cvc">CVC</label>
+              <input class="text-inp" type="text" id="cvc" value="***" />
+            </div>
           </div>
         </div>
-        <div class="input-group">
-          <label for="cvc">CVC</label>
-          <input class="text-inp" type="text" id="cvc" value="213" />
-        </div>
       </div>
 
-      <button type="submit" class="pay-button">Pay $84.96</button>
+      
+
+      <button type="submit" class="pay-button">Pay ${{total}}.00</button>
     </form>
   </div>
 </div>
